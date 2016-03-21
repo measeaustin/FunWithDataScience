@@ -1,0 +1,48 @@
+Recommendation Systems Using Collaborative Filtering
+
+Authors:
+  Kevin Zhang       kzhang@cs.wisc.edu
+  Qinyuan Sun       qsun28@wisc.edu
+  Austin Mease      amease@wisc.edu
+
+Requirements:
+  An introduction to the design of recommendation systems using
+  collaborative filtering. Assumes basic knowledge of linear
+  algebra, computer science, and convex optimization. Warm-up,
+  lab, and analysis sections require the student to write MatLab
+  code.
+
+Contents:
+  PDF:                Overview, instructions, and analysis questions.
+
+  src/ratings.mat:    Contains MovieLens 1M data set in sparse matrix
+                      form and a lookup table (description below).
+
+  src/main.m:         Main entry point for the lab. Contains code for
+                      splitting data set into training and testing,
+                      running each algorithm, validating results on
+                      the testing set, and calculating prediction
+                      error.
+
+  src/neighborhood.m: Function that implements a user-user
+                      neighborhood method. See code documentation
+                      for details. Called by main.m.
+
+  src/sgd_bias.m:     Function that implements a latent factor model
+                      using stochastic gradient descent. Model also
+                      includes bias terms. See code documentation
+                      for details. Called by main.m.
+
+  src/svdpp.m:        Function that implements SVD++ algorithm using
+                      stochastic gradient descent. Model includes
+                      bias terms and implicit data. See code
+                      documentation for details. Called by main.m
+
+Data set:
+  This lab uses the MovieLens 1M dataset originally found here:
+
+  http://grouplens.org/datasets/movielens/
+
+  ratings.mat contains a 6040 (users) x 3952 (movies) ratings
+  matrix and a lookup table that contains the list of movie ids
+  for which each user has provided prior ratings.
